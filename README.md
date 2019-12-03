@@ -24,6 +24,30 @@ graphQL example API in flask
 
 you can try it graphiql
 
+```
+{
+  users {
+    edges {
+      node {
+        id
+        name
+        githubId
+        avatar
+        photos {
+          edges {
+            node {
+              id
+              url
+              category
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ## used packages
 
 ```
