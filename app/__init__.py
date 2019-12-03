@@ -14,6 +14,7 @@ from flask_graphql import GraphQLView
 from app.extensions import db
 from app.transactions import Transaction
 from app.gql import schema
+from app.commands.seed import seed
 
 
 def create_app(env='development'):
@@ -33,5 +34,7 @@ def create_app(env='development'):
     Migrate(app, db)
 
     app.add_url_rule('/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True))
+
+    app.cli.add_command(seed)
 
     return app
