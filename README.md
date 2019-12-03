@@ -23,3 +23,16 @@ graphQL example API in flask
 ## try it
 
 you can try it graphiql
+
+## used packages
+
+```
+flask = "*"
+flask-graphql = "*"
+graphene = ">=2.0"
+graphene-sqlalchemy = "*"
+flask-sqlalchemy = "*"
+pymysql = "*"
+inflection = "*"
+flask-migrate = "*"
+```
