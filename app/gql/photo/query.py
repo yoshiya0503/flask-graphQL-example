@@ -15,3 +15,8 @@ from app.gql.photo.schema import PhotoConnection
 class PhotoQuery(graphene.ObjectType):
 
     photos = SQLAlchemyConnectionField(PhotoConnection)
+    photo_count = graphene.Int(required=True)
+
+    def resolve_photo_count(self, info, **args):
+        query = PhotoConnection.get_query(info)
+        return query.count()

@@ -15,4 +15,4 @@ from app.models.user import User
 class UserConnection(SQLAlchemyObjectType):
     class Meta:
         model = User
-        interfaces = (relay.Node, )
+        # interfaces = (relay.Node, )
